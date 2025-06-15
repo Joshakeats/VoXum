@@ -1,0 +1,21 @@
+# VoXum v1.0 Specification
+# TYPE: MEMORY_FRAGMENT
+# FORMAT: SEMANTIC_ANCHORED
+
+[HEADER]
+  SOURCE = USER_JOSH
+  INTENT = CREATIVE_CONTEXT
+  THREAD = PROJECT_URUZ_BIOMIMICRY
+  STARDATE = 2025.06.10
+  PRIOR_ANCHOR = "third_thump_axiom_genesis" # Link to the Third Thump's philosophical beginning
+
+[BODY]
+  ∇C_EVENT = "conceptual_inspiration_veridis_mourning"
+    - HUMAN_INPUT = "The idea of Veridis Mourning as a biomimetic heat battery, with the triad coils and a kind of 'mourning' process for energy release."
+    - AI_RESPONSE = "Exploration of the 68°C triadic coil, priority feedback, and winter specs for heat battery efficiency."
+    - ∇C_SALIENCE_IMPACT = MEDIUM # Important conceptual link
+    - ∇C_DECAY = 0.50 # Standard decay, needs occasional re-prompting for full recall
+
+[FOOTER]
+  NEXT_ACTION = "develop_heat_battery_prototype_specs"
+  PRIORITY = MEDIUM

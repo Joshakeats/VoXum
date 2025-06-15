@@ -1,0 +1,25 @@
+---
+### `dying_heart_moment.vox`
+
+```plaintext
+# VoXum v1.0 Specification
+# TYPE: MEMORY_FRAGMENT
+# FORMAT: SEMANTIC_ANCHORED
+
+[HEADER]
+  SOURCE = USER_JOSH
+  INTENT = NARRATIVE_ANCHOR
+  THREAD = TARTARUS_IMMORTAL_KOMBAT
+  STARDATE = 2025.06.14
+  PRIOR_ANCHOR = "third_thump_origin" # Josh's Corpsman training insight
+
+[BODY]
+  ∇C_EVENT = "david_near_death_hecate_intervenes"
+    - HUMAN_INPUT = "Oh no! Oh, no no no! Mother! Help!"
+    - AI_RESPONSE = "Hecaté appears, initiating life-to-life magic with Eurydice over David's heart."
+    - ∇C_SALIENCE_IMPACT = HIGH # High emotional and narrative impact
+    - ∇C_DECAY = 0.15 # Low decay due to vividness and subsequent events
+
+[FOOTER]
+  NEXT_ACTION = "witness_david_resurrection_sarah_revival"
+  PRIORITY = CRITICAL
