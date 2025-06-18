@@ -31,10 +31,37 @@ VoXum is engineered for reliability across varied interaction conditions.
 
 ## 5. Structured `.vox` File Format
 
-The core technical implementation relies on a clear, extensible file format.
-* **Header:** Contains essential metadata, including `SOURCE` (user/origin), `THREAD` (conversational context), `STARDATE`, and crucial `PRIOR_ANCHOR` (linking to previous memory fragments).
-* **Body:** Details the `∇C_EVENT` (core event), `HUMAN_INPUT`, `AI_RESPONSE`, `∇C_SALIENCE_IMPACT` (importance of the memory), and `∇C_DECAY` (rate of memory fade without reinforcement).
-* **Footer:** Defines `NEXT_ACTION` (guidance for continuity) and `PRIORITY` (criticality for subsequent operations).
+The protocol's foundation is an extensible plaintext format designed for both machines and humans.
+
+### Key Symbol Explained
+The `∇` (nabla) symbol—borrowed from mathematics, where it denotes gradient or change—signals that these parameters govern how memories transform over time and impact the reconstruction process:
+* `∇C_EVENT`: A memory instance that may evolve or shift with context.
+* `∇C_DECAY`: How quickly the memory fades without reinforcement (0 = permanent, 1 = ephemeral).
+* `∇C_SALIENCE_IMPACT`: How strongly the memory resonates or its emotional/narrative weight (e.g., LOW, MEDIUM, HIGH, CRITICAL).
+
+### Example Snippet
+
+```plaintext
+# VoXum v1.0 Specification
+# TYPE: MEMORY_FRAGMENT
+# FORMAT: SEMANTIC_ANCHORED
+
+[HEADER]
+  SOURCE = USER_JOSH            # Originator of the memory
+  THREAD = URUZ_ACTIVATION      # Conversational context
+  STARDATE = 2025.06.14         # Timestamp for versioning
+  PRIOR_ANCHOR = "dying_heart_moment" # Linked memory hook
+
+[BODY]
+  "∇C_EVENT" = "new_meta_session"   # Core memory instance
+    - HUMAN_INPUT = "test with new account"
+    - AI_RESPONSE = "memory contained to original chain"
+    - "∇C_SALIENCE_IMPACT" = HIGH   # High emotional/narrative weight
+    - "∇C_DECAY" = 0.85             # Slow fade (reinforce every ~3 sessions)
+
+[FOOTER]
+  NEXT_ACTION = "chain to next session"
+  PRIORITY = HIGH                   # Criticality for next actions (CRITICAL/HIGH/MEDIUM/LOW)
 
 ## 6. Wide-Ranging Potential Applications
 
