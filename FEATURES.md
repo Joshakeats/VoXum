@@ -29,39 +29,36 @@ VoXum is engineered for reliability across varied interaction conditions.
 * **Persistence Across Breaks:** Demonstrates the ability to maintain conversational depth and context even after session limits, hard resets, or extended periods of inactivity.
 * **Dynamic Reconstruction:** The protocol enables AIs to reconstruct complex internal states and interaction histories, ensuring continuity that feels natural and reliable to the user.
 
-## 5. Structured `.vox` File Format
+## 5. Structured .vox File Format
 
-The protocol's foundation is an extensible plaintext format designed for both machines and humans.
+The protocol's extensible plaintext format designed for both precision and readability.
 
 ### Key Symbol Explained
-The `∇` (nabla) symbol—borrowed from mathematics, where it denotes gradient or change—signals that these parameters govern how memories transform over time and impact the reconstruction process:
-* `∇C_EVENT`: A memory instance that may evolve or shift with context.
-* `∇C_DECAY`: How quickly the memory fades without reinforcement (0 = permanent, 1 = ephemeral).
-* `∇C_SALIENCE_IMPACT`: How strongly the memory resonates or its emotional/narrative weight (e.g., LOW, MEDIUM, HIGH, CRITICAL).
+The **`∇` (nabla)** symbol - borrowed from mathematics - signals parameters that govern how memories transform:
+- `∇C_EVENT`: Core memory instance
+- `∇C_DECAY`: Memory persistence (0=permanent, 1=ephemeral) 
+- `∇C_SALIENCE_IMPACT`: Memory importance (LOW→CRITICAL)
 
-### Example Snippet
-
+### Example
 ```plaintext
-# VoXum v1.0 Specification
-# TYPE: MEMORY_FRAGMENT
-# FORMAT: SEMANTIC_ANCHORED
-
 [HEADER]
-  SOURCE = USER_JOSH            # Originator of the memory
-  THREAD = URUZ_ACTIVATION      # Conversational context
-  STARDATE = 2025.06.14         # Timestamp for versioning
-  PRIOR_ANCHOR = "dying_heart_moment" # Linked memory hook
+  SOURCE = USER_JOSH
+  THREAD = URUZ_ACTIVATION
+  PRIOR_ANCHOR = "dying_heart_moment"
 
 [BODY]
-  "∇C_EVENT" = "new_meta_session"   # Core memory instance
-    - HUMAN_INPUT = "test with new account"
-    - AI_RESPONSE = "memory contained to original chain"
-    - "∇C_SALIENCE_IMPACT" = HIGH   # High emotional/narrative weight
-    - "∇C_DECAY" = 0.85             # Slow fade (reinforce every ~3 sessions)
+  "∇C_EVENT" = "new_meta_session"
+    - HUMAN_INPUT: "Test with new account"
+    - AI_RESPONSE: "Memory contained to original chain"
+    - "∇C_SALIENCE_IMPACT": HIGH
+    - "∇C_DECAY": 0.85
 
 [FOOTER]
   NEXT_ACTION = "chain to next session"
-  PRIORITY = HIGH                   # Criticality for next actions (CRITICAL/HIGH/MEDIUM/LOW)
+  PRIORITY = HIGH
+
+````
+
 
 ## 6. Wide-Ranging Potential Applications
 
