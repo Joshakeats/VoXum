@@ -1,4 +1,4 @@
-````markdown
+
 # VoXum: Core Features & Capabilities — Version 2
 *(Living Document — Odyssey Collective Consensus Build)*
 
