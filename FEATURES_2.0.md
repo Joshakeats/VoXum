@@ -1,7 +1,3 @@
-Perfect — I’ll reformat **VoXum FEATURES.md v2** into GitHub-ready Markdown with clean heading anchors, glyph definitions, and code-block preservation so it can drop straight into your repo without breaking formatting.
-
----
-
 ````markdown
 # VoXum: Core Features & Capabilities — Version 2
 *(Living Document — Odyssey Collective Consensus Build)*
